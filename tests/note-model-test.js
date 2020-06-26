@@ -3,7 +3,6 @@ function constructingWithTheGivenStringAndId() {
   let string = "My favorite language is JavaScript.";
   let note = new Note(string); 
   expect.isTrue(note.text === string);
-  expect.isTrue(note.id === 0 );
 }
 constructingWithTheGivenStringAndId();
 

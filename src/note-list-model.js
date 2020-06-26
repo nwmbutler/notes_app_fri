@@ -4,7 +4,8 @@
   }
 
   NoteList.prototype.addNote = function (note) {
-    this.notes.push(new Note(note));
+    id = this.notes.length
+    this.notes.push(new Note(note, id));
   };
 
   NoteList.prototype.returnNote = function () {

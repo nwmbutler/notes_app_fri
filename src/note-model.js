@@ -1,7 +1,7 @@
 (function (exports) {
-  function Note(text) {
-    this.id = 0
+  function Note(text, id) {
     this.text = text;
+    this.id = id;
   }
 
   Note.prototype.returnText = function () {

@@ -27,3 +27,12 @@ function StoresInstancesOfNoteWhenAddingNewNote() {
   expect.isTrue(noteList.returnNote()[1].text === "anotherNote");
 }
 StoresInstancesOfNoteWhenAddingNewNote();
+
+function prependsWithAnIndexID() {
+  let noteList = new NoteList();
+  noteList.addNote("note");
+  noteList.addNote("anotherNote");
+  expect.isTrue(noteList.returnNote()[0].id === 0);
+  expect.isTrue(noteList.returnNote()[1].id === 1);
+}
+prependsWithAnIndexID();
