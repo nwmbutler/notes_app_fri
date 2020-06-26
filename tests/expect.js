@@ -1,7 +1,7 @@
 var expect = {
   isTrue: function (expectationToCheck, description) {
     if (!expectationToCheck) {
-      throw new Error(
+      console.log(
         "Expectation failed: " + expectationToCheck + " is not truthy\n\n" + description
       );
     } else {
