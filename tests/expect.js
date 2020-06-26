@@ -1,11 +1,11 @@
 var expect = {
-  isTrue: function (expectationToCheck) {
+  isTrue: function (expectationToCheck, description) {
     if (!expectationToCheck) {
       throw new Error(
-        "Expectation failed: " + expectationToCheck + " is not truthy"
+        "Expectation failed: " + expectationToCheck + " is not truthy\n\n" + description
       );
     } else {
-      console.log("Test function has passed");
+      console.log(`"Test function ${description} passed"`);
     }
   },
 

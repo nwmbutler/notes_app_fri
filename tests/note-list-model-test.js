@@ -32,7 +32,7 @@ function prependsWithAnIndexID() {
   let noteList = new NoteList();
   noteList.addNote("note");
   noteList.addNote("anotherNote");
-  expect.isTrue(noteList.returnNote()[0].id === 0);
-  expect.isTrue(noteList.returnNote()[1].id === 1);
+  expect.isTrue(noteList.returnNote()[0].id === 0, "id 1");
+  expect.isTrue(noteList.returnNote()[1].id === 1, "id 2");
 }
 prependsWithAnIndexID();
