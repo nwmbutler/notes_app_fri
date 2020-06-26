@@ -43,3 +43,19 @@ function checkLinksExist2() {
 setTimeout(() => {
   checkLinksExist2()
 }, 200);
+
+function loadingSingleNotePage() {
+   let notelist = new NoteList();
+      notelist.addNote("Favourite food: pesto");
+      notelist.addNote("hi, this is a note, exite!")
+  let view = new NoteController(notelist);
+  view.getHTML();
+  view.startListen();
+  document.getElementById('link1').click()
+  setTimeout(() => {
+  expect.isTrue(document.getElementById("app").innerHTML === `<div>hi, this is a note, exite!</div>`, "single note page")
+}, 200);
+}
+  setTimeout(() => {
+loadingSingleNotePage();
+}, 200);

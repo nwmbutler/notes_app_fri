@@ -10,6 +10,15 @@
         var ele = document.getElementById('app')
         ele.innerHTML = this.view.returnHTML();
     }
+   
+    NoteController.prototype.startListen = function () {
+        window.addEventListener("hashchange", changeHTML)   
+    }
+
+    function changeHTML () {
+        var ele = document.getElementById('app')
+        ele.innerHTML = `<div>hi, this is a note, exite!</div>`;
+    }
 
 
     exports.NoteController = NoteController;
