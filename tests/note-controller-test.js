@@ -22,6 +22,7 @@ function checkLinksExist() {
       notelist.addNote("Favourite food: pesto");
   let view = new NoteController(notelist);
   view.getHTML();
+  startListen(view);
   document.getElementById('link0').click()
 
   expect.isTrue(window.location.hash.split('#')[1] === "notes/0", "link test 1")
@@ -36,6 +37,7 @@ function checkLinksExist2() {
       notelist.addNote("hi, this is a note, exite!")
   let view = new NoteController(notelist);
   view.getHTML();
+  startListen(view);
   document.getElementById('link1').click()
 
   expect.isTrue(window.location.hash.split('#')[1] === "notes/1", "link test 2")
@@ -50,7 +52,7 @@ function loadingSingleNotePage() {
       notelist.addNote("hi, this is a note, exite!")
   let view = new NoteController(notelist);
   view.getHTML();
-  view.startListen();
+  startListen(view);
   document.getElementById('link1').click()
   setTimeout(() => {
   expect.isTrue(document.getElementById("app").innerHTML === `<div>hi, this is a note, exite!</div>`, "single note page")
@@ -58,4 +60,20 @@ function loadingSingleNotePage() {
 }
   setTimeout(() => {
 loadingSingleNotePage();
+}, 200);
+
+function loadingSingleNotePage2() {
+   let notelist = new NoteList();
+      notelist.addNote("Favourite food: pesto");
+      notelist.addNote("hi, this is a note, exite!")
+  let view = new NoteController(notelist);
+  view.getHTML();
+  startListen(view);
+  document.getElementById('link0').click()
+  setTimeout(() => {
+  expect.isTrue(document.getElementById("app").innerHTML === `<div>Favourite food: pesto</div>`, "single note page 2")
+}, 200);
+}
+  setTimeout(() => {
+loadingSingleNotePage2();
 }, 200);
